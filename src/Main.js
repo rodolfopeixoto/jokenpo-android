@@ -22,6 +22,16 @@ export default class jokenpo extends Component {
   }
 
   jokenpo(userChoose){
+    let choose = Math.floor(Math.random() * 3);
+    let computer = '';
+    switch(choose){
+        case 0: computer = 'pedra'; break;
+        case 1: computer = 'papel'; break;
+        case 2: computer = 'tesoura'; break;
+    }
+    
+    
+    this.setState({computerChoose: computer}); 
     this.setState({userChoose:userChoose});
   }
 
