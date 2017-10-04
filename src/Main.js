@@ -18,42 +18,37 @@ export default class jokenpo extends Component {
   constructor(props){
     super(props);
 
-    this.state = {text: ''};
+    this.state = {userChoose: '', computerChoose: ''};
   }
 
-  updateText(){
-    this.setState({text:'Adiciona Texto'});
-  }
-
-  updateText(){
-    this.setState({text:'Adiciona Texto'});
+  jokenpo(userChoose){
+    this.setState({userChoose:userChoose});
   }
 
   render() {
     return (
       <View>
         <Text>
-          Escolha do computador
+          Escolha do computador: {this.state.computerChoose}
         </Text>
         <Text>
-          Escolha do usuário
-        </Text>
+          Escolha do usuário: {this.state.userChoose}  </Text>
         <Text> 
             Resultado
         </Text>
 
         <Button
-          onPress={() => {this.updateText()}} 
+          onPress={ () => {this.jokenpo('pedra')}} 
           title='Pedra'
         />
 
         <Button
-          onPress={() => {this.updateText()}} 
+          onPress={ () => {this.jokenpo('papel')}} 
           title='Papel'
         />
 
         <Button
-          onPress={() => {this.updateText()}} 
+          onPress={ () => {this.jokenpo('tesoura')}} 
           title='Tesoura'
         />
       </View>
