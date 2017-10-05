@@ -4,21 +4,21 @@ import {
   Image
 } from 'react-native';
 
-export default class Icon extends Component{
+class Icon extends Component{
     render(){
 
         if(this.props.choose == 'pedra'){
             return(
-                <Image source={require('./images/pedra.png')} /> 
+                <Image source={require('./../images/pedra.png')} /> 
             );
         }else if(this.props.choose == 'papel'){
             return(
-                <Image source={require('./images/papel.png')} /> 
+                <Image source={require('./../images/papel.png')} /> 
             );
 
         }else if(this.props.choose == 'tesoura'){
             return(
-                <Image source={require('./images/tesoura.png')} /> 
+                <Image source={require('./../images/tesoura.png')} /> 
             );
 
         }else{
@@ -26,3 +26,5 @@ export default class Icon extends Component{
         }
     }
 }
+
+export default Icon;

@@ -11,15 +11,15 @@ import {
 
 const {height, width} = Dimensions.get('window');
 
-import Header from './Header';
-import Icon from './Icon';
+import Header from './Components/Header';
+import Icon from './Components/Icon';
 
 export default class jokenpo extends Component {
   
   constructor(props){
     super(props);
 
-    this.state = {userChoose: '', computerChoose: '', result: '', points: 0};
+    this.state = {userChoose: '', computerChoose: '', result: ''};
   }
 
   jokenpo(userChoose){
@@ -95,11 +95,6 @@ export default class jokenpo extends Component {
           <Icon choose={this.state.userChoose} />  
           <Icon choose={this.state.computerChoose}/>
             
-        </View>
-
-        <View>
-            <Text>Ranking</Text>
-            <Text></Text>
         </View>
 
 
