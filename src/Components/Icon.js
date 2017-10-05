@@ -4,26 +4,29 @@ import {
   Image
 } from 'react-native';
 
+const pedra = require('./../images/pedra.png');
+const papel = require('./../images/papel.png');
+const tesoura = require('./../images/tesoura.png');
+
 class Icon extends Component{
     render(){
 
         if(this.props.choose == 'pedra'){
             return(
-                <Image source={require('./../images/pedra.png')} /> 
+                <Image source={pedra} /> 
             );
         }else if(this.props.choose == 'papel'){
             return(
-                <Image source={require('./../images/papel.png')} /> 
+                <Image source={papel} /> 
             );
 
         }else if(this.props.choose == 'tesoura'){
             return(
-                <Image source={require('./../images/tesoura.png')} /> 
+                <Image source={tesoura} /> 
             );
 
-        }else{
-            return false;
         }
+          return false;
     }
 }
 

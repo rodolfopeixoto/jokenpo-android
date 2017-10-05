@@ -19,35 +19,36 @@ export default class jokenpo extends Component {
   constructor(props){
     super(props);
 
-    this.state = {userChoose: '', computerChoose: '', result: ''};
+    this.state = { userChoose: '', computerChoose: '', result: '' };
   }
 
   jokenpo(userChoose){
-    let choose = Math.floor(Math.random() * 3);
+    const choose = Math.floor(Math.random() * 3);
     let computer = '';
-    switch(choose){
+    switch(choose) {
         case 0: computer = 'pedra'; break;
         case 1: computer = 'papel'; break;
         case 2: computer = 'tesoura'; break;
+        default: computer = '';
     }
     
     let result = '';
 
-    if(computer == 'pedra'){
-        if(userChoose == 'pedra') result = 'Vocês empataram!';
-        if(userChoose == 'papel') result = 'Você ganhou!';
-        if(userChoose == 'tesoura') result = 'Você perdeu! :(';
-    }else if(computer == 'papel'){
-      if(userChoose == 'pedra') result = 'Você perdeu! :(';
-      if(userChoose == 'papel') result = 'Vocês empataram!';
-      if(userChoose == 'tesoura') result = 'Você ganhou!';
-    }else{
-        if(userChoose == 'pedra') result = 'Você ganhou!';
-        if(userChoose == 'papel') result = 'Você perdeu! :(';
-        if(userChoose == 'tesoura') result = 'Vocês empataram!';
+    if (computer === 'pedra') {
+        if (userChoose === 'pedra') result = 'Vocês empataram!';
+        if (userChoose === 'papel') result = 'Você ganhou!';
+        if (userChoose === 'tesoura') result = 'Você perdeu! :(';
+    } else if (computer === 'papel'){
+      if (userChoose === 'pedra') result = 'Você perdeu! :(';
+      if (userChoose === 'papel') result = 'Vocês empataram!';
+      if (userChoose === 'tesoura') result = 'Você ganhou!';
+    } else {
+        if (userChoose === 'pedra') result = 'Você ganhou!';
+        if (userChoose === 'papel') result = 'Você perdeu! :(';
+        if (userChoose === 'tesoura') result = 'Vocês empataram!';
     }
 
-    this.setState({computerChoose: computer,userChoose:userChoose, result: result}); 
+    this.setState({ computerChoose: computer,userChoose, result}); 
   }
 
   render() {
@@ -58,7 +59,7 @@ export default class jokenpo extends Component {
 
         <View style={styles.content}>
           <TouchableOpacity
-            onPress={ () => {this.jokenpo('pedra')}}
+            onPress={() => {this.jokenpo('pedra')}}
             >
             <Text style={styles.contentText}>Pedra</Text>
             
@@ -66,7 +67,7 @@ export default class jokenpo extends Component {
 
 
           <TouchableOpacity
-            onPress={ () => {this.jokenpo('papel')}}
+            onPress={() => {this.jokenpo('papel')}}
             >
             <Text style={styles.contentText}>Papel</Text>
             
@@ -74,7 +75,7 @@ export default class jokenpo extends Component {
 
 
           <TouchableOpacity
-            onPress={ () => {this.jokenpo('tesoura')}}
+            onPress={() => {this.jokenpo('tesoura')}}
             >
             <Text style={styles.contentText}>Tesoura</Text>
             
